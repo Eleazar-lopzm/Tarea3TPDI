@@ -8,8 +8,8 @@ public class Gasto {
     private String mes;
     private String tarjeta;
     private String transaccion;
-    private double gastos;
-    private double pagos; 
+    private Double gastos;
+    private Double pagos; 
 
     public String getFecha() {
         return fecha;
@@ -43,19 +43,19 @@ public class Gasto {
         this.transaccion = transaccion;
     }
 
-    public double getGastos() {
+    public Double getGastos() {
         return gastos;
     }
 
-    public void setGastos(double gastos) {
+    public void setGastos(Double gastos) {
         this.gastos = gastos;
     }
 
-    public double getPagos() {
+    public Double getPagos() {
         return pagos;
     }
 
-    public void setPagos(double pagos) {
+    public void setPagos(Double pagos) {
         this.pagos = pagos;
     }
     

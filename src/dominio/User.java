@@ -10,10 +10,10 @@ public class User {
 	private String apellidos;
 	private String direccion;
 	private String fecha;
-	private double monto;
+	private Double monto;
 	private int periodo;
 	private String moneda;
-	private double cuota;
+	private Double cuota;
 	private int TEA;
 	private String fechaVencimiento;
         private List<Gasto> gastos;
@@ -54,7 +54,7 @@ public class User {
 	public String getFecha() {
 		return fecha;
 	}
-	public double getMonto() {
+	public Double getMonto() {
 		return monto;
 	}
 	public int getPeriodo() {
@@ -63,7 +63,7 @@ public class User {
 	public String getMoneda() {
 		return moneda;
 	}
-	public double getCuota() {
+	public Double getCuota() {
 		return cuota;
 	}
 	public int getTEA() {
@@ -75,7 +75,7 @@ public class User {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	public void setMonto(double monto) {
+	public void setMonto(Double monto) {
 		this.monto = monto;
 	}
 	public void setPeriodo(int periodo) {
@@ -84,7 +84,7 @@ public class User {
 	public void setMoneda(String moneda) {
 		this.moneda = moneda;
 	}
-	public void setCuota(double cuota) {
+	public void setCuota(Double cuota) {
 		this.cuota = cuota;
 	}
 	public void setTEA(int tEA) {
