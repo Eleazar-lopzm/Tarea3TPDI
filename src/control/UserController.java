@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,6 +46,12 @@ public class UserController {
                 user.setGastos(listaGastos);
 		model.addAttribute( "user", user );
 		return "userForm";
+	}
+
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		// allow empty strings to be converted to null for Double fields (pagos, gastos)
+		binder.registerCustomEditor(Double.class, new CustomNumberEditor(Double.class, true));
 	}
 
 	@RequestMapping( method = RequestMethod.POST )

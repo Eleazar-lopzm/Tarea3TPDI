@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+  pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>Detalle del Registro Exitoso</title>
     <style>
-    /* Estilo básico de tabla: bordes simples y ancho de 50% */
+    /* Estilo bï¿½sico de tabla: bordes simples y ancho de 50% */
     table {
       border-collapse: collapse;
       width: 50%;
@@ -25,7 +26,7 @@
   </style>
 </head>
 <body>
-  <h1>Detalle del Usuario y Crédito</h1>
+  <h1>Detalle del Usuario y Crï¿½dito</h1>
   <hr>
 
   <h2>Datos Personales</h2>
@@ -47,16 +48,16 @@
       <td>${user.edad}</td>
     </tr>  
     <tr>
-      <td>Género</td>
+      <td>Gï¿½nero</td>
       <td>${user.genero}</td>
     </tr>
     <tr>
-      <td>Dirección</td>
+      <td>Direcciï¿½n</td>
       <td>${user.direccion}</td>
     </tr>
   </table>
 
-  <h2>Datos del Crédito</h2>
+  <h2>Datos del Crï¿½dito</h2>
   <table>
     <tr>
       <th>Campo</th>
@@ -106,7 +107,7 @@
               <td>${gasto.fecha}</td>
               <td>${gasto.transaccion}</td>
               <td>${gasto.gastos}</td>
-              <td>${gasto.pagos}</td> <%-- Mostramos el pago que se guardó --%>
+              <td>${gasto.pagos}</td> <%-- Mostramos el pago que se guardï¿½ --%>
           </tr>
       </c:forEach>
   </table>

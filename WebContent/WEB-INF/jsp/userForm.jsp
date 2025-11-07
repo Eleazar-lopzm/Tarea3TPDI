@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   <title>Registro de Usuario y Crédito</title>
+   <title>Registro de Usuario y Crï¿½dito</title>
    <style>
      /* Estilo solo para que los errores sean visibles */
      .error {
@@ -16,7 +17,7 @@
       h1 {
           color: #11BBB0;
       }
-      /* Estilo básico para la tabla */
+      /* Estilo bï¿½sico para la tabla */
       table {
           width: 80%;
           margin: 10px auto; /* Centrar la tabla */
@@ -60,12 +61,12 @@
 			<td colspan="2"><form:errors path="edad" cssClass="error" /></td>
 		</tr>
         <tr>
-            <td>Dirección:</td>
+            <td>Direcciï¿½n:</td>
             <td><form:input path="direccion" /></td>
             <td colspan="2"><form:errors path="direccion" cssClass="error" /></td>
         </tr>
 		<tr>
-			<td>Género:</td>
+			<td>Gï¿½nero:</td>
 			<td>
 				<form:radiobutton path="genero" value="M" label="Masculino" /> 
 				<form:radiobutton path="genero" value="F" label="Femenino" />
@@ -78,7 +79,7 @@
 		</tr>
         <tr>
 			<td colspan="4">
-			  <h2>Datos del Crédito</h2>
+			  <h2>Datos del Crï¿½dito</h2>
 			</td>		 
 		</tr>
         
@@ -92,7 +93,7 @@
             <td>Moneda:</td>
             <td colspan="3">
                 <form:radiobutton path="moneda" value="Pesos" label="Pesos(MX$)" /> 
-                <form:radiobutton path="moneda" value="Dolares" label="Dólares (US$)" />
+                <form:radiobutton path="moneda" value="Dolares" label="Dï¿½lares (US$)" />
             </td>
             <td><form:errors path="moneda" cssClass="error" /></td>
         </tr>
@@ -102,7 +103,7 @@
             <form:errors path="monto" cssClass="error"/>
             </td>
             
-            <td>Período (meses):</td>
+            <td>Perï¿½odo (meses):</td>
             <td>
             <form:input path="periodo" type="number" />
             <form:errors path="periodo" cssClass="error" />
@@ -144,7 +145,7 @@
 	</table>
             
         <tr>
-            <td colspan="4"><br><h2>Gastos con tarjeta de crédito</h2></td>
+            <td colspan="4"><br><h2>Gastos con tarjeta de crï¿½dito</h2></td>
         </tr>
         <tr>
             <td colspan="4">
@@ -159,6 +160,7 @@
                     </tr>
                     
                     <c:forEach items="${user.gastos}" var="gasto" varStatus="status">
+                    <c:set var="gastoIndex" value="${status.index}" scope="page"/>
                         <tr>
                             <td><c:out value="${gasto.fecha}"/></td>
                             <td><c:out value="${gasto.mes}"/></td>
@@ -166,8 +168,12 @@
                             <td><c:out value="${gasto.transaccion}"/></td>
                             <td><c:out value="${gasto.gastos}"/></td>                            
                             <td>
-                                <form:input path="gastos[${status.index}].pagos" />
-                                <form:hidden path="gastos[${status.index}].id" />
+                <form:input path="gastos[${gastoIndex}].pagos" />
+                <form:hidden path="gastos[${gastoIndex}].id" />
+                <!-- Enviar tambiÃ©n los campos descriptivos para que aparezcan en userSuccess sin recargar desde BD -->
+                <form:hidden path="gastos[${gastoIndex}].fecha" />
+                <form:hidden path="gastos[${gastoIndex}].transaccion" />
+                <form:hidden path="gastos[${gastoIndex}].gastos" />
                             </td>
                         </tr>
                     </c:forEach>
