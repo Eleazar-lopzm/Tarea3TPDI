@@ -1,0 +1,15 @@
+# Directorios de compilación de NetBeans/Ant
+/build
+/dist
+
+# Archivos y carpetas de NetBeans/IDE
+/nbproject/private
+/nbproject/genfiles.properties
+/nbproject/build-impl.xml
+/nbproject/ant-deploy.xml
+/nbproject/project.properties
+/nbproject/project.xml
+
+# Logs y caches del servidor
+*.log
+.DS_Store
