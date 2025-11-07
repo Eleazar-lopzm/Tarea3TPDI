@@ -2,7 +2,9 @@ package servicio;
 
 import baseDeDatos.UsuariosJDBCTemplate;
 import dominio.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
 	@Override

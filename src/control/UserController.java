@@ -23,7 +23,6 @@ import validator.UserValidator;
 @Controller
 @RequestMapping( "/" )
 
-
 public class UserController {
 
 	private UserService userService;
@@ -31,7 +30,7 @@ public class UserController {
         private GastoDAO gastoDAO;
  
 	@Autowired
-	public UserController( UserService userService, UserValidator userValidator ) {
+	public UserController( UserService userService, UserValidator userValidator, GastoDAO gastoDAO ) {
 		this.userService = userService;
 		this.userValidator = userValidator;
                 this.gastoDAO = gastoDAO;

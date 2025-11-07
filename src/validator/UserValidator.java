@@ -5,7 +5,9 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import dominio.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserValidator implements Validator {
 
 	String Caractinvalidos = "1234567890!@#$?{}[]',;:~`_+=^&*().-|";
